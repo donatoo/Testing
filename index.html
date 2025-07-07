@@ -72,6 +72,10 @@
 
     clickCatcher.addEventListener("click", () => {
       console.log("Overlay clicked. Gaining trust...");
+
+      // Remove overlay so iframe becomes clickable
+      clickCatcher.style.display = "none";
+
       enterFullscreen();
 
       setTimeout(() => {
@@ -82,7 +86,7 @@
         } else {
           console.log("Still on trusted domain.");
         }
-      }, 2500); // delay allows popup to trigger if any
+      }, 2500);
     });
 
     window.addEventListener("blur", () => {
